@@ -4,15 +4,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const restartButton = document.getElementById("restartGame");
     const messageElement = document.getElementById("message");
 
-    // 새로운 코드 시작 (가속도와 회전 데이터를 저장하는 부분)
+    // 가속도와 회전 데이터 저장
     let accelerationData = [];
     let rotationData = [];
 
     if (window.DeviceMotionEvent) {
         window.addEventListener("devicemotion", handleMotion);
-    } else {
-        alert("이 기기는 DeviceMotionEvent를 지원하지 않습니다.");
-    }
+    } 
 
     function handleMotion(event) {
         const acceleration = event.accelerationIncludingGravity;
@@ -42,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("accelerationData").textContent = `Acceleration - X: ${acceleration.x.toFixed(2)}, Y: ${acceleration.y.toFixed(2)}, Z: ${acceleration.z.toFixed(2)}`;
         document.getElementById("rotationData").textContent = `Rotation - Alpha: ${rotationRate.alpha.toFixed(2)}, Beta: ${rotationRate.beta.toFixed(2)}, Gamma: ${rotationRate.gamma.toFixed(2)}`;
     }
-    // 새로운 코드 끝
+
 
  
     let player = { x: 40, y: 40, size: 40, color: "red" };
