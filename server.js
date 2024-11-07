@@ -1,4 +1,3 @@
-// server.js
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -11,7 +10,7 @@ app.use(express.json());
 const MONGO_URI = "mongodb+srv://user:1234@cluster0.5uyhb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // MongoDB 연결 설정
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGO_URI)
     .then(() => console.log("MongoDB Atlas에 연결 성공"))
     .catch(err => console.error("MongoDB Atlas 연결 실패:", err));
 
