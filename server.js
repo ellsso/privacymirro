@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Atlas URI (사용자 정보와 데이터베이스 이름 수정)
-const MONGO_URI = "mongodb+srv://user:1234@cluster0.5uyhb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const MONGO_URI = "mongodb+srv://user:1234@cluster0.5uyhb.mongodb.net/priDB?retryWrites=true&w=majority&appName=Cluster0";
 
 // MongoDB 연결 설정
 mongoose.connect(MONGO_URI)
